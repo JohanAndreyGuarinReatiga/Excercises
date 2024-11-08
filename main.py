@@ -1,26 +1,26 @@
-#Ejercicio 5: Días de la semana
-#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la
-#semana usando match .
+#Ejercicio 3: Calculadora básica
+#Utiliza match para implementar una calculadora simple.
 #Enunciado:
-#Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes,
-#7 = Domingo).
+#Crea una calculadora que solicite dos números y una operación matemática (+, -, *, /). Usa match
+#para realizar la operación correspondiente.
 
 while True:
-    number = int(input("Enter a number to tell you what day is: "))
-    match number: 
-        case 1:
-            print("Sunday")
-        case 2:
-            print("Monday")
-        case 3:
-            print("Tuesday")
-        case 4:
-            print("Wednesday")
-        case 5:
-            print("Thursday")
-        case 6:
-            print("Friday")
-        case 7:
-            print("Saturday")
+    firstNumber = int(input("Enter the first number: "))
+    secondNumber = int(input("Enter the second number: "))
+    operator = input("Enter the operator (+, -, *, /):")
+    match operator:
+        case "+":
+            print(firstNumber + secondNumber)
+        case "-":
+            print(firstNumber - secondNumber)
+        case "*":
+            print(firstNumber * secondNumber)
+        case "/":
+            print(firstNumber / secondNumber)
         case _:
-            print("Thats not a day in the week")
+            print("Thats not an operator")
+    quest = input("do you want to continue? type yes or no: ")
+    if quest == "yes":
+        continue
+    else: 
+        break
