@@ -1,18 +1,16 @@
-#Ejercicio 6: Juego de adivinanza de números
-#Escribe un programa que implemente un juego de adivinanza de números.
+#jercicio 7: Número positivo, negativo o cero
+#Escribe un programa que determine si un número es positivo, negativo o cero usando if .
 #Enunciado:
-#El programa genera un número aleatorio entre 1 y 10. El usuario debe adivinar el número, y el
-#programa indica si el número ingresado es mayor, menor o igual al número generado.
-import random
+#Solicita al usuario que ingrese un número y determina si es positivo, negativo o cero
 
-number = random.randint(1,10)
-while True:
-    guessing = int(input("try to guess the number: "))
-    if guessing > number:
-        print("your guessing is greater than the number")
-    if guessing < number:
-        print("your guessing is less than the number")
-    elif guessing == number:
-        print("your guessing is equal to the number, YOU WON!!!")
+while True: 
+    number = int(input("Enter a number: "))
+    if number > 0:
+        print("The number is positive")
+    if number == 0:
+        print("The number is 0")
+    if number < 0:
+        print("The number is negative")
+    cont = input("if you want to write another number type 'continue' or 'leave' to exit: ")
+    if cont == "leave": 
         break
-
