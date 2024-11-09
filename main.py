@@ -1,15 +1,13 @@
-#Ejercicio 13: Comparación de tres números
-#Escribe un programa que determine el mayor de tres números usando if .
+#Ejercicio 14: Adivinanza de letras
+#Escribe un programa que permita al usuario adivinar una letra secreta usando match .
 #Enunciado:
-#Solicita al usuario que ingrese tres números y determina cuál es el mayor.
+#El programa contiene una letra secreta (por ejemplo, "A"). El usuario debe adivinar la letra, y el
+#programa le indicará si acertó o no.
 
-firstNumber = int(input("Enter a number: "))
-secondNumber = int(input("Enter a number: "))
-thirdNumber = int(input("Enter a number: "))
+guessLetter = input("Guess the letter: ")
 
-if firstNumber >= secondNumber and firstNumber >= thirdNumber:
-    print(f"The largest number is: {firstNumber}")
-elif secondNumber >= firstNumber and secondNumber >= thirdNumber:
-    print(f"The largest number is: {secondNumber}")
-else:
-    print(f"The largest number is: {thirdNumber}")
+match guessLetter:
+    case "A":
+        print("You guessed the secret letter")
+    case _:
+        print("Thats not the correct letter")
