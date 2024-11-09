@@ -1,14 +1,19 @@
-#Ejercicio 11: Conversión de temperaturas
-#Escribe un programa que convierta grados Celsius a Fahrenheit o Fahrenheit a Celsius usando match .
+#Ejercicio 12: Calculadora de IMC (Índice de Masa Corporal)  BODY MASS INDEX (BMI)
+#Escribe un programa que calcule el IMC y determine el estado de peso.
 #Enunciado:
-#Solicita al usuario que ingrese una temperatura y una escala (C o F). Convierte la temperatura a la
-#escala opuesta usando match .
+#Solicita al usuario su peso (en kg) y su altura (en metros). Calcula el IMC y clasifícalo en bajo peso
+#(<18.5), peso normal (18.5-24.9), sobrepeso (25-29.9), o obesidad (>=30).
+import math
+height = float(input("Enter you height in meters: "))
+weight = float(input("Enter you weight in kilos: "))
 
-temp = int(input("Enter a temperature: "))
-scale = input("if your temperature is in Celsius type 'C' or if its in Fahrenheit type 'F': ").upper()
+imc = weight / (math.pow(height,2))  
 
-match scale:
-    case "C":
-        print((temp * 9 / 5) + 32)
-    case "F":
-        print((temp - 32) * 5 / 9 )
+if imc <= 18.5:
+    print("Underweight")
+elif 18.5 <= imc <= 24.9:
+    print("Normal weight")
+elif 25 <= imc <= 29.9:
+    print("Overweight")
+elif imc >= 30: 
+    print("YOURE OBESE")
