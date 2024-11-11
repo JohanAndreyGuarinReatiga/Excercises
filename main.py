@@ -1,12 +1,12 @@
-#Ejercicio 1: Suma de los primeros N números enteros
+#Ejercicio 2: Contador de vocales en una cadena
 #Enunciado:
-#Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los
-#primeros n números enteros. Utiliza un ciclo for para realizar la suma.
+#Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales (a, e, i,
+#o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
 
-sum = 0
-
-n = int(input("Enter an integer positive number: "))
-for i in range(1, n+1):
-    sum += i
-
-print(sum)
+entrance = input("type something: ")
+vowels = "aeiouAEIOU"
+count = 0
+for char in entrance:
+    if char in vowels:
+        count += 1
+print(f"The text contains {count} vowels")
