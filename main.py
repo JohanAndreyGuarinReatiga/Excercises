@@ -1,18 +1,27 @@
-#Ejercicio 18: Sistema de evaluación de créditos universitarios
-#Escribe un programa que calcule el número de créditos totales de un estudiante en base a las
-#materias cursadas y el puntaje obtenido en cada una. El puntaje debe ser evaluado como
-#aprobado o no aprobado.
+#Ejercicio 20: Conversión de calificaciones numéricas a letras
+#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un
+#sistema de calificación específico, usando match .
 #Enunciado:
-#Solicita al usuario ingresar el número de materias que ha cursado. Para cada materia, solicita el
-#puntaje y determina si ha aprobado o no (>= 60). Luego, calcula el número total de créditos del
-#estudiante (cada materia aprobada otorga 3 créditos)
+#Solicita una calificación numérica (0-100) y convierte esa calificación a una letra usando el
+#siguiente esquema:
+#A: 90-100
+#B: 80-89
+#C: 70-79
+#D: 60-69
+#F: 0-59
 
-numSubjects = int(input("How many subjects have you completed? write it here: "))
-credits = 0
+grade = int(input("Write your grade: "))
 
-for i in range(numSubjects):
-    grade = float(input(f"what have you scored in the {i+1} subject?: "))
-    if grade >= 60:
-        credits += 3
-    
-print(f"Your total on credits is {credits}")
+match grade:
+    case A:
+        if 90 <= grade <= 100:
+            print("A")
+        elif 80 <= grade <= 89:
+            print("B")
+        elif 70 <= grade <= 79:
+            print("C")
+        elif 60 <= grade <= 69:
+            print("D")
+        else:
+            print("F")
+        
