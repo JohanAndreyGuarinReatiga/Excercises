@@ -1,23 +1,21 @@
-#Ejercicio 16: Cálculo del tiempo de viaje
-#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
+#Ejercicio 17: Sistema de calificaciones con bonificaciones
+#Escribe un programa que calcule la calificación final de un estudiante basándose en su calificación
+#y si ha hecho tareas adicionales. Las tareas adicionales pueden darle un extra de puntos, pero el
+#máximo de puntos no puede exceder 100.
 #Enunciado:
-#Solicita al usuario la distancia a recorrer (en km) y la velocidad promedio del automóvil (en km/h).
-#Calcula el tiempo de viaje en horas y minutos. Si la velocidad es mayor a 120 km/h, muestra un
-#mensaje de advertencia.
+#Solicita la calificación del estudiante y pregunta si hizo tareas adicionales. Si la respuesta es "sí",
+#añade un 5% extra a la calificación, pero si la calificación supera 100, ajústala a 100. Si la respuesta
+#es "no", simplemente muestra la calificación original
 
-distance = int(input("Enter the distance in kilometers: "))
-avSpeed = int(input("Enter the average speed in kilometers per hour: "))
+grade = int(input("Write your grade: "))
+extraAssignments = input("have you done extra assignments?(yes or no): ")
+extraScore = grade + (grade * 0.05)
 
-time = distance / avSpeed
-
-hours = int(time) 
-minutes = int((time - hours) * 60) 
-if avSpeed > 120:
-    print("""
-                *********************************
-                            WARNING!!!
-                    YOURE EXCEEDING 120 km/h 
-                *********************************
-""")
-
-print(f"The travel time is {hours} hours and {minutes} minutes.")
+match extraAssignments: 
+    case "yes":
+        if extraScore < 100:
+            print(f"Your final score is {extraScore}")
+        elif extraScore > 100:    
+            print("Your final score is 100")
+    case _:
+        print(f"Your grade is {grade}")
