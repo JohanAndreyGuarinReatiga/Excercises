@@ -1,22 +1,26 @@
-#Ejercicio 21: Sistema de estacionamiento con tarifas progresivas
-#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con tarifas progresivas.
+#Ejercicio 22: Clasificación de triángulos por sus ángulos
+#Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos
+#internos usando if .
 #Enunciado:
-#El costo de estacionamiento se calcula de la siguiente manera:
-#Primera hora: $5
-#Segunda a cuarta hora: $4 por hora
-#Más de cuatro horas: $3 por cada hora adicional
-#Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
+#Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
+#Agudo: Todos los ángulos son menores a 90°.
+#Rectángulo: Un ángulo es exactamente 90°.
+#Obtuso: Un ángulo es mayor a 90°.
 
-hours = int(input("Enter the parking lot hours: "))
-totalCost = 0
-additionalHours = hours - 4 
 
-if hours == 1:
-    totalCost += 5
-elif 2 <= hours <= 4:
-    totalCost += 5 + ((hours - 1) * 4)
-elif hours > 4:
-    totalCost += 17 + (additionalHours * 3)
-        
-print(f"The total parking lot cost will be: ${totalCost}")
-
+while True:
+    firstAngle = float(input("Enter the first angle: "))
+    secondAngle = float(input("Enter the second angle: "))
+    thirdAngle = float(input("Enter the third angle: "))
+    
+    if (firstAngle + secondAngle + thirdAngle) != 180:
+        print("Thats not a triangle, try again")
+    elif firstAngle < 90 and secondAngle < 90 and thirdAngle < 90:
+        print("The triangle is Acute")
+        break
+    elif firstAngle == 90 or secondAngle == 90 or thirdAngle == 90:
+        print("The triangle is Right")
+        break
+    else:
+        print("The triangle is Obtuse")
+        break
