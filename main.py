@@ -1,27 +1,22 @@
-#Ejercicio 20: Conversión de calificaciones numéricas a letras
-#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un
-#sistema de calificación específico, usando match .
+#Ejercicio 21: Sistema de estacionamiento con tarifas progresivas
+#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con tarifas progresivas.
 #Enunciado:
-#Solicita una calificación numérica (0-100) y convierte esa calificación a una letra usando el
-#siguiente esquema:
-#A: 90-100
-#B: 80-89
-#C: 70-79
-#D: 60-69
-#F: 0-59
+#El costo de estacionamiento se calcula de la siguiente manera:
+#Primera hora: $5
+#Segunda a cuarta hora: $4 por hora
+#Más de cuatro horas: $3 por cada hora adicional
+#Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
 
-grade = int(input("Write your grade: "))
+hours = int(input("Enter the parking lot hours: "))
+totalCost = 0
+additionalHours = hours - 4 
 
-match grade:
-    case A:
-        if 90 <= grade <= 100:
-            print("A")
-        elif 80 <= grade <= 89:
-            print("B")
-        elif 70 <= grade <= 79:
-            print("C")
-        elif 60 <= grade <= 69:
-            print("D")
-        else:
-            print("F")
+if hours == 1:
+    totalCost += 5
+elif 2 <= hours <= 4:
+    totalCost += 5 + ((hours - 1) * 4)
+elif hours > 4:
+    totalCost += 17 + (additionalHours * 3)
         
+print(f"The total parking lot cost will be: ${totalCost}")
+
