@@ -1,26 +1,19 @@
-#Ejercicio 5: Días de la semana
-#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la
-#semana usando match .
-#Enunciado:
-#Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes,
-#7 = Domingo).
+#Ejercicio 6: Adivina el número (con while )
+#Enunciado: (random.randint(1, 100))
+#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario
+#adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número
+#secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el
+#número
 
+import random
+
+number = random.randint(1,100)
 while True:
-    number = int(input("Enter a number to tell you what day is: "))
-    match number: 
-        case 1:
-            print("Sunday")
-        case 2:
-            print("Monday")
-        case 3:
-            print("Tuesday")
-        case 4:
-            print("Wednesday")
-        case 5:
-            print("Thursday")
-        case 6:
-            print("Friday")
-        case 7:
-            print("Saturday")
-        case _:
-            print("Thats not a day in the week")
+    guessing = int(input("try to guess the number: "))
+    if guessing > number:
+        print("your guessing is greater than the number")
+    if guessing < number:
+        print("your guessing is less than the number")
+    elif guessing == number:
+        print("\nYOU'VE GUESSED THE NUMBER!!!\n")
+        break
