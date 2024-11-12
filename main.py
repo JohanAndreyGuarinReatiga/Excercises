@@ -1,12 +1,12 @@
-#Ejercicio 2: Contador de vocales en una cadena
+#Ejercicio 3: Factorial de un número
 #Enunciado:
-#Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales (a, e, i,
-#o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
+#Escribe un programa que solicite al usuario un número entero positivo n y calcule el factorial de
+#dicho número ( n! = 1 * 2 * 3 * ... * n ). Usa un ciclo for para realizar el cálculo.
 
-entrance = input("type something: ")
-vowels = "aeiouAEIOU"
-count = 0
-for char in entrance:
-    if char in vowels:
-        count += 1
-print(f"The text contains {count} vowels")
+n = int(input("Enter a number: "))
+
+factor = 1
+for i in range(1, n + 1):
+    factor *= i
+
+print(f"The factorial of {n} is: {factor}")
